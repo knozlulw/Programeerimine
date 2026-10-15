@@ -13,6 +13,7 @@ print("Sama ", end="")
 print("rida")
 
 
+
 nimi=input("Sisesta oma nimi: ")
 print("Tere",nimi,"!")
 
