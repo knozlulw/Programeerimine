@@ -42,8 +42,8 @@ print(f"Muutuja: {kas_käib_koolis}, tüüp {type(kas_käib_koolis)}")
 #Seejärel kuva muutujas olev kommide arv ekraanile kasutades print() käsku.
 #Küsi kasutajalt sisendit, mitu kommi ta soovib laualt ära võtta. 
 #Eemalda soovitud kommide arv laual olevate kommide arvust ja kuva ekraanile, kui palju komme laual nüüd on.
-
-kommid = 15
+from random import randint
+kommid = randint(10, 50)
 print(f"Mitu kommi tahad võtta, laual on {kommid} kommi")
 soov = int(input("Mitu kommi võtad? => "))
 kommid -= soov
