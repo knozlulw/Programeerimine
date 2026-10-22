@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3fd9265f-a502-4540-80c7-8baf645a11c7</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>kodutoo.py</StartupFile>
+    <StartupFile>too1.1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="kodutoo.py" />
     <Compile Include="Programeerimine.py" />
+    <Compile Include="too1.1.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
