@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3fd9265f-a502-4540-80c7-8baf645a11c7</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>2.2.py</StartupFile>
+    <StartupFile>2.1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="2.1.py" />
     <Compile Include="2.2.py" />
     <Compile Include="kodutoo.py" />
     <Compile Include="Programeerimine.py" />
