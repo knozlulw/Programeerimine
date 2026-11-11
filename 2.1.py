@@ -128,4 +128,50 @@ elif sugu == "n" or sugu == "naine":
     else:
         print(f"Pikkus {pikkus} cm — pikk")
 else:
-    print("Viga: sisesta sugu kui 'mehes' või 'naine'!")   
+    print("Viga: sisesta sugu kui 'mehes' või 'naine'!") 
+
+
+# poes
+
+import random
+
+tooted = [
+    ("Piim", round(random.uniform(0.5, 3), 2)),
+    ("Sai", round(random.uniform(0.5, 3), 2)),
+    ("Leib", round(random.uniform(0.5, 3), 2)),
+    ("Muna", round(random.uniform(0.5, 3), 2)),
+    ("Juust", round(random.uniform(0.5, 3), 2)),
+]
+
+ostud = []
+
+for nimi, hind in tooted:
+    print(f"\n{nimi} — {hind} €")
+    ostab = input(f"Kas soovid {nimi.lower()}t osta? (jah/ei): ").lower()
+    if ostab == "jah":
+        kogus_str = input("Kogus: ")
+        if kogus_str.isdigit():
+            kogus = int(kogus_str)
+            if kogus > 0:
+                summa = round(hind * kogus, 2)
+                ostud.append((nimi, hind, kogus, summa))
+            else:
+                print("Kogus peab olema positiivne!")
+        else:
+            print("Kogus peab olema täisarv!")
+
+print("\n" + "=" * 30)
+print(f"{'TSEKK':^30}")
+print("=" * 30)
+
+kogusumma = 0
+for nimi, hind, kogus, summa in ostud:
+    print(f"{nimi:<10} {kogus} x {hind:.2f} € = {summa:.2f} €")
+    kogusumma += summa
+
+print("-" * 30)
+print(f"{"KOGUSUMMA":<19} {kogusumma:.2f} €")
+print("=" * 30)
+
+if not ostud:
+    print("Ostu ei tehtud.")   
