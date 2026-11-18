@@ -149,6 +149,9 @@ piim = random.randint(1, 4)
 sai = random.randint(1, 4)
 leib = random.randint(1, 4)
 
+table = {"piim", "sai", "leib"}
+#print(table)
+
 
 valik = input(f'Sisesta toode mis tahad osta (piim "{piim}$", sai "{sai}$", leib "{leib}$")')
 
@@ -159,3 +162,48 @@ if valik == "piim" or valik == "sai" or valik == "leib":
         kogus = int(kogus)
         hind = locals()[valik]
         print(f'Ostsid "{valik}" koguses "{kogus}", läks maksma "{hind * kogus}$"')
+        table.remove(valik)
+        #print(table)
+
+    veel = input(f'Kas soovid veel midagi osta ("{table}", ei)?')
+
+    if veel == "ei":
+        print("ei soovi")
+
+    if veel in table:
+        #print("on")
+
+        kogus = input(f'Valisid: "{veel}", Vali kogus: ')
+
+        if kogus.isdigit():
+            kogus = int(kogus)
+            hind = locals()[valik]
+            print(f'Ostsid "{valik}" koguses "{kogus}", läks maksma "{hind * kogus}$"')
+            table.remove(veel)
+            #print(table)
+
+
+    veel = input(f'Kas soovid veel midagi osta ("{table}", ei)?')
+
+    if veel == "ei":
+        print("ei soovi")
+
+    if veel in table:
+        print("on")
+
+        kogus = input(f'Valisid: "{veel}", Vali kogus: ')
+
+        if kogus.isdigit():
+            kogus = int(kogus)
+            hind = locals()[valik]
+            print(f'Ostsid "{valik}" koguses "{kogus}", läks maksma "{hind * kogus}$"')
+            table.remove(veel)
+            #print(table)
+
+           
+
+
+
+
+
+    #if veel == "jah":
