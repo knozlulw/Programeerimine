@@ -1,4 +1,4 @@
-﻿# juku
+# juku
 
 nimi = input("Sisesta eesnimi: ")
 
@@ -78,11 +78,11 @@ else:
 # temperatuur
 
 try:
-    temp = float(input("Sisesta toatemperatuur (°C): "))
+    temp = float(input("Sisesta toatemperatuur (C): "))
     if temp > 18:
-        print(f"Temperatuur on {temp} °C — üle soovitatava!")
+        print(f"Temperatuur on {temp} C: üle soovitatava!")
     else:
-        print(f"Temperatuur on {temp} °C — toasoojus on korras.")
+        print(f"Temperatuur on {temp} C: toasoojus on korras.")
 except ValueError:
     print("Viga: sisesta arv!")
 
@@ -93,85 +93,45 @@ except ValueError:
 # keskmine: 160–180 cm
 # pikk:    > 180 cm
 
-pikkus = float(input("Sisesta pikkus (cm): "))
 
-if pikkus < 160:
-    print(f"Pikkus {pikkus} cm — lühike")
-elif pikkus <= 180:
-    print(f"Pikkus {pikkus} cm — keskmine")
-else:
-    print(f"Pikkus {pikkus} cm — pikk")   
+try:
+    pikkus = float(input("Sisesta pikkus (cm): "))
 
-# pikkus ja sugu
+    if pikkus < 160:
+        print(f"Pikkus lühike")
+    elif pikkus <= 180:
+        print(f"Pikkus keskmine")
+    else:
+        print(f"Pikkus pikk")   
+except ValueError:
+    print("sisesta number")
+
+
+
+
 
 # Piirid:
 # Naised: lühike < 155, keskmine 155–170, pikk > 170
 # Mehed:  lühike < 165, keskmine 165–185, pikk > 185
 
-sugu = input("Sisesta sugu (mehes/naine): ").lower()
+sugu = input("Sisesta sugu (mees/naine): ").lower()
 pikkus = float(input("Sisesta pikkus (cm): "))
 
-if sugu == "m" or sugu == "mehes":
+if sugu == "mees":
     print("Sugu: mees")
     if pikkus < 165:
-        print(f"Pikkus {pikkus} cm — lühike")
+        print(f"Pikkus lühike")
     elif pikkus <= 185:
-        print(f"Pikkus {pikkus} cm — keskmine")
+        print(f"Pikkus keskmine")
     else:
-        print(f"Pikkus {pikkus} cm — pikk")
-elif sugu == "n" or sugu == "naine":
+        print(f"Pikkus pikk")
+elif sugu == "naine":
     print("Sugu: naine")
     if pikkus < 155:
-        print(f"Pikkus {pikkus} cm — lühike")
+        print(f"Pikkus lühike")
     elif pikkus <= 170:
-        print(f"Pikkus {pikkus} cm — keskmine")
+        print(f"Pikkus keskmine")
     else:
-        print(f"Pikkus {pikkus} cm — pikk")
+        print(f"Pikkus pikk")
 else:
-    print("Viga: sisesta sugu kui 'mehes' või 'naine'!") 
-
-
-# poes
-
-import random
-
-tooted = [
-    ("Piim", round(random.uniform(0.5, 3), 2)),
-    ("Sai", round(random.uniform(0.5, 3), 2)),
-    ("Leib", round(random.uniform(0.5, 3), 2)),
-    ("Muna", round(random.uniform(0.5, 3), 2)),
-    ("Juust", round(random.uniform(0.5, 3), 2)),
-]
-
-ostud = []
-
-for nimi, hind in tooted:
-    print(f"\n{nimi} — {hind} €")
-    ostab = input(f"Kas soovid {nimi.lower()}t osta? (jah/ei): ").lower()
-    if ostab == "jah":
-        kogus_str = input("Kogus: ")
-        if kogus_str.isdigit():
-            kogus = int(kogus_str)
-            if kogus > 0:
-                summa = round(hind * kogus, 2)
-                ostud.append((nimi, hind, kogus, summa))
-            else:
-                print("Kogus peab olema positiivne!")
-        else:
-            print("Kogus peab olema täisarv!")
-
-print("\n" + "=" * 30)
-print(f"{'TSEKK':^30}")
-print("=" * 30)
-
-kogusumma = 0
-for nimi, hind, kogus, summa in ostud:
-    print(f"{nimi:<10} {kogus} x {hind:.2f} € = {summa:.2f} €")
-    kogusumma += summa
-
-print("-" * 30)
-print(f"{"KOGUSUMMA":<19} {kogusumma:.2f} €")
-print("=" * 30)
-
-if not ostud:
-    print("Ostu ei tehtud.")   
+    print("sisesta sugu kui mees või naine!") 
