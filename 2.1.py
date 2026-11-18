@@ -142,63 +142,63 @@
 
 
 
-#pood
-import random
+# #pood
+# import random
 
-piim = random.randint(1, 4)
-sai = random.randint(1, 4)
-leib = random.randint(1, 4)
+# piim = random.randint(1, 4)
+# sai = random.randint(1, 4)
+# leib = random.randint(1, 4)
 
-table = {"piim", "sai", "leib"}
-#print(table)
-
-
-valik = input(f'Sisesta toode mis tahad osta (piim "{piim}$", sai "{sai}$", leib "{leib}$")')
-
-if valik == "piim" or valik == "sai" or valik == "leib":
-    kogus = input(f'Valisid: "{valik}", Vali kogus: ')
-
-    if kogus.isdigit():
-        kogus = int(kogus)
-        hind = locals()[valik]
-        print(f'Ostsid "{valik}" koguses "{kogus}", läks maksma "{hind * kogus}$"')
-        table.remove(valik)
-        #print(table)
-
-    veel = input(f'Kas soovid veel midagi osta ("{table}", ei)?')
-
-    if veel == "ei":
-        print("ei soovi")
-
-    if veel in table:
-        #print("on")
-
-        kogus = input(f'Valisid: "{veel}", Vali kogus: ')
-
-        if kogus.isdigit():
-            kogus = int(kogus)
-            hind = locals()[valik]
-            print(f'Ostsid "{valik}" koguses "{kogus}", läks maksma "{hind * kogus}$"')
-            table.remove(veel)
-            #print(table)
+# table = {"piim", "sai", "leib"}
+# #print(table)
 
 
-    veel = input(f'Kas soovid veel midagi osta ("{table}", ei)?')
+# valik = input(f'Sisesta toode mis tahad osta (piim "{piim}$", sai "{sai}$", leib "{leib}$")')
 
-    if veel == "ei":
-        print("ei soovi")
+# if valik == "piim" or valik == "sai" or valik == "leib":
+#     kogus = input(f'Valisid: "{valik}", Vali kogus: ')
 
-    if veel in table:
-        print("on")
+#     if kogus.isdigit():
+#         kogus = int(kogus)
+#         hind = locals()[valik]
+#         print(f'Ostsid "{valik}" koguses "{kogus}", läks maksma "{hind * kogus}$"')
+#         table.remove(valik)
+#         #print(table)
 
-        kogus = input(f'Valisid: "{veel}", Vali kogus: ')
+#     veel = input(f'Kas soovid veel midagi osta ("{table}", ei)?')
 
-        if kogus.isdigit():
-            kogus = int(kogus)
-            hind = locals()[valik]
-            print(f'Ostsid "{valik}" koguses "{kogus}", läks maksma "{hind * kogus}$"')
-            table.remove(veel)
-            #print(table)
+#     if veel == "ei":
+#         print("ei soovi")
+
+#     if veel in table:
+#         #print("on")
+
+#         kogus = input(f'Valisid: "{veel}", Vali kogus: ')
+
+#         if kogus.isdigit():
+#             kogus = int(kogus)
+#             hind = locals()[valik]
+#             print(f'Ostsid "{valik}" koguses "{kogus}", läks maksma "{hind * kogus}$"')
+#             table.remove(veel)
+#             #print(table)
+
+
+#     veel = input(f'Kas soovid veel midagi osta ("{table}", ei)?')
+
+#     if veel == "ei":
+#         print("ei soovi")
+
+#     if veel in table:
+#         print("on")
+
+#         kogus = input(f'Valisid: "{veel}", Vali kogus: ')
+
+#         if kogus.isdigit():
+#             kogus = int(kogus)
+#             hind = locals()[valik]
+#             print(f'Ostsid "{valik}" koguses "{kogus}", läks maksma "{hind * kogus}$"')
+#             table.remove(veel)
+#             #print(table)
 
            
 
@@ -206,4 +206,71 @@ if valik == "piim" or valik == "sai" or valik == "leib":
 
 
 
-    #if veel == "jah":
+#     #if veel == "jah":
+
+
+
+
+
+
+
+# 9. Ruut
+# Kasutaja sisestab nelinurga nelja külje pikkused. Programm teatab, 
+# kas tegemist saab olla ruuduga (kõik küljed on võrdsed).
+# Kontrolli ka, et kõik pikkused on positiivsed.
+
+# Koosta programmi kohta plokkskeem ja salvesta see PNG-pildina programmiga samasse kausta.
+
+
+esimene = int(input(f'Sisesta 1 nurk: '))
+teine = int(input(f'Sisesta 2 nurk: '))
+kolmas = int(input(f'Sisesta 3 nurk: '))
+neljas = int(input(f'Sisesta 4 nurk: '))
+
+if esimene == teine == kolmas == neljas:
+    if esimene >= 1 and teine >= 1 and kolmas >= 1 and neljas >= 1:
+        print("ruut")
+    else:
+        print("kõik numbrid peavad olema positiivsed")
+else:
+    print("nelinurk")
+
+
+# 10. Matemaatika
+# Kasutaja sisestab kaks arvu. 
+# Seejärel küsib programm, millist tehet ta soovib (+, -, *, /), ja kuvab tulemuse.
+
+# Kui sisestatakse tundmatu tehtemärk, kuva veateade.
+# Nulliga jagamise korral kuva arusaadav teade, mitte veateade Pythonist.
+# Koosta programmi kohta plokkskeem ja salvesta see PNG-pildina programmiga samasse kausta
+
+# esimene = int(input(f'Esimene arv: '))
+# teine = int(input(f'Teine arv: '))
+# arvutusmark = input(f'Pane (+, -, *, /): ')
+
+
+# if arvutusmark == "+":
+#     print(esimene + teine)
+# elif arvutusmark == "-":
+#     print(esimene - teine)
+# elif arvutusmark == "*":
+#     print(esimene * teine)
+# elif arvutusmark == "/":
+#     print(esimene / teine)
+
+
+
+# 11. Juubel
+# Kasutaja sisestab oma sünniaasta. 
+# Programm arvutab, mitu aastat ta sel aastal saab, ja ütleb, kas tegemist on juubeliga (vanus jagub 10-ga). 
+# Kui ei ole, ütle, mitu aastat on järgmise juubelini.
+
+# Vihje: jooksva aasta saad date.today().year abil, jäägi % abil.
+
+# Plokkskeemi pole vaja.
+
+from datetime import date
+
+year = date.today().year
+
+print(year)
